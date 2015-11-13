@@ -9,7 +9,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/greeting"
-        android:textColor="@android:color/white"
+        android:textColor="#000"
+        android:text="Test"
         android:textSize="32sp" />
 
 </LinearLayout><!-- From: file:/D:/Project/PlanMe/app/src/main/res/layout/fragment_day.xml -->
