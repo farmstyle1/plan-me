@@ -1,5 +1,6 @@
 package com.pinbook.planme.Fragment;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 
 import com.pinbook.planme.Adapter.DayAdapter;
 import com.pinbook.planme.Adapter.ListActivityAdapter;
+import com.pinbook.planme.AddWorkActivity;
 import com.pinbook.planme.Model.ListActivityModel;
 import com.pinbook.planme.R;
 
@@ -37,7 +39,7 @@ public class FragmentDay extends Fragment {
         // Sample add varible to Model
 
         listActivityModel = new ArrayList<ListActivityModel>();
-        for (int i=0;i<=30;i++){
+        for (int i=0;i<=3;i++){
             ListActivityModel activityModel = new ListActivityModel("aaa",10,"15-11-2015","plus");
             listActivityModel.add(activityModel);
         }
@@ -57,7 +59,8 @@ public class FragmentDay extends Fragment {
         addition.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("check","button");
+                Intent intent = new Intent(getContext(),AddWorkActivity.class);
+                startActivity(intent);
             }
         });
 
