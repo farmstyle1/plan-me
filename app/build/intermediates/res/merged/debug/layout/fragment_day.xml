@@ -1,16 +1,23 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/linear_layout"
     android:orientation="vertical"
-    android:gravity="center"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#fff">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/greeting"
-        android:textColor="#000"
-        android:text="Test"
-        android:textSize="32sp" />
+
+    <ListView
+        android:id="@+id/listViewActivity"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="20"
+        android:layout_below="@+id/lisViewHead"></ListView>
+
+    <ImageView
+        android:id="@+id/addition"
+        android:layout_weight="1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/add"/>
 
 </LinearLayout><!-- From: file:/D:/Project/PlanMe/app/src/main/res/layout/fragment_day.xml -->
