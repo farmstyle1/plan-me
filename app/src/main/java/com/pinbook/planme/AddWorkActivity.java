@@ -1,26 +1,79 @@
 package com.pinbook.planme;
 
+import android.graphics.Color;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-
+import android.view.View;
+import android.widget.Button;
 import com.pinbook.planme.Adapter.AddWorkAdapter;
+import com.pinbook.planme.Fragment.FragmentExpenses;
+import com.pinbook.planme.Fragment.FragmentWorks;
 
 public class AddWorkActivity extends FragmentActivity {
 
     ViewPager viewPager;
+    Button btnExpenses;
+    Button btnWorks;
+    final int[] colors = {
+            Color.rgb(255, 255, 255), // #F64747
+            Color.rgb(244, 244, 244)
+    }; // #9A12B3
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_work);
 
-        AddWorkAdapter addWorkAdapter = new AddWorkAdapter(getSupportFragmentManager());
-        viewPager = (ViewPager)findViewById(R.id.addWorkPage);
-        viewPager.setAdapter(addWorkAdapter);
+        firstRun();
+
+        btnExpenses.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btnWorks.setBackgroundColor(colors[1]);
+                btnExpenses.setBackgroundColor(colors[0]);
+                FragmentExpenses fragmentExpenses = new FragmentExpenses();
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.layoutFragment, fragmentExpenses);
+                transaction.commit();
+
+
+            }
+        });
+
+        btnWorks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btnExpenses.setBackgroundColor(colors[1]);
+                btnWorks.setBackgroundColor(colors[0]);
+                FragmentWorks fragmentWorks = new FragmentWorks();
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.layoutFragment, fragmentWorks);
+                transaction.commit();
+            }
+        });
+
+
     }
+
+    private void firstRun(){
+
+        btnExpenses = (Button) findViewById(R.id.btnExpenses);
+        btnWorks = (Button) findViewById(R.id.btnWorks);
+        btnWorks.setBackgroundColor(colors[1]);
+
+        FragmentExpenses fragmentExpenses = new FragmentExpenses();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.layoutFragment, fragmentExpenses);
+        transaction.commit();
+
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

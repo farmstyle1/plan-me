@@ -5,10 +5,35 @@
     android:background="#f2f2f2"
     tools:context="${relativePackage}.${activityClass}" >
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/addWorkPage"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#ffffff" />
+    <LinearLayout
+        android:id="@+id/layoutBtn"
+        android:layout_width="fill_parent"
+        android:layout_height="70dp">
+        <Button
+            android:id="@+id/btnExpenses"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:text="ค่าใช้จ่าย"
+            android:background="@color/white"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/btnWorks"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:text="กิจกรรม"
+            android:background="@color/white"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/layoutFragment"
+        android:layout_below="@+id/layoutBtn"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/white">
+
+
+    </RelativeLayout>
+
 
 </RelativeLayout>
