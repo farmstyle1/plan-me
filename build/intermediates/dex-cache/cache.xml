@@ -2,32 +2,32 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\admini\AppData\Local\Android\android-sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.0\support-annotations-23.1.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="92e3fc113ec3ee36b64603a38857b95700025633">
-        <dex dex="D:\Project\plan-me\app\build\intermediates\pre-dexed\debug\support-annotations-23.1.0-c9ace624d9895edd3555be491fe716cad70146a7.jar" />
-    </item>
-    <item
-        jar="D:\Project\plan-me\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.0\jars\classes.jar"
+        jar="D:\Project\PlanMe\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="57ae0d750ff83f0c738d21720224ac7ea866a094">
-        <dex dex="D:\Project\plan-me\app\build\intermediates\pre-dexed\debug\classes-8160c133abdceadc4b3a96f15dd29a45dd9ced9f.jar" />
+        <dex dex="D:\Project\PlanMe\app\build\intermediates\pre-dexed\debug\classes-733e8c890c9ce2fc1eb65e84a1868405376573bf.jar" />
     </item>
     <item
-        jar="D:\Project\plan-me\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\jars\libs\internal_impl-23.1.0.jar"
+        jar="D:\Project\PlanMe\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\jars\libs\internal_impl-23.1.0.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="8716243bf04bae8d6c9ca94d27b9a9be7236f0a3">
-        <dex dex="D:\Project\plan-me\app\build\intermediates\pre-dexed\debug\internal_impl-23.1.0-070abf5905b166514a7267fdf0df4ebed46c230e.jar" />
+        <dex dex="D:\Project\PlanMe\app\build\intermediates\pre-dexed\debug\internal_impl-23.1.0-002744b6d5d33b9e883fe7a548c8804feecf66d7.jar" />
     </item>
     <item
-        jar="D:\Project\plan-me\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\jars\classes.jar"
+        jar="D:\Project\PlanMe\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="ddde541c289c8b816a8f8fd6c325d80788c522a6">
-        <dex dex="D:\Project\plan-me\app\build\intermediates\pre-dexed\debug\classes-771ff384b69811776317b4b589d538e31510e36b.jar" />
+        <dex dex="D:\Project\PlanMe\app\build\intermediates\pre-dexed\debug\classes-332b72ddc4573b93439a01eed56e9f19ea9623dc.jar" />
+    </item>
+    <item
+        jar="C:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.0\support-annotations-23.1.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="92e3fc113ec3ee36b64603a38857b95700025633">
+        <dex dex="D:\Project\PlanMe\app\build\intermediates\pre-dexed\debug\support-annotations-23.1.0-24c46cbde714be0842274322039416f341dd73a0.jar" />
     </item>
 
 </items>

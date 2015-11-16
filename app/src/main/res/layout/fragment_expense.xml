@@ -4,11 +4,35 @@
     android:layout_height="match_parent"
     android:background="#fff" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="Fragment One" />
+  <LinearLayout
+      android:id="@+id/listLayout"
+      android:padding="@dimen/activity_horizontal_margin"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="รายการ"/>
+      <EditText
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content" />
+  </LinearLayout>
+    <LinearLayout
+        android:id="@+id/priceLayout"
+        android:layout_below="@id/listLayout"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="จำนวน"/>
+        <EditText
+
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
 
 </RelativeLayout>
