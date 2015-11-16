@@ -5,8 +5,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.pinbook.planme.Fragment.FragmentExpense;
-import com.pinbook.planme.Fragment.FragmentWork;
+import com.pinbook.planme.Fragment.FragmentExpenses;
+import com.pinbook.planme.Fragment.FragmentWorks;
 
 /**
  * Created by Miki on 11/15/2015.
@@ -21,9 +21,9 @@ public class AddWorkAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         if(position == 0){
-            return new FragmentExpense();
+            return new FragmentExpenses();
         }else if(position == 1){
-            return new FragmentWork();
+            return new FragmentWorks();
         }
         return null;
     }
