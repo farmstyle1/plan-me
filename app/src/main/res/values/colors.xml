@@ -5,4 +5,10 @@
     <color name="colorAccent">#FF4081</color>
     <color name="white">#FFF</color>
     <color name="black">#000</color>
+
+
+    <color name="holoColor">#33b5e5</color>
+
+
+
 </resources>

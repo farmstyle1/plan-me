@@ -20,9 +20,9 @@ public class AddWorkActivity extends FragmentActivity {
     Button btnExpenses;
     Button btnWorks;
     final int[] colors = {
-            Color.rgb(255, 255, 255), // #F64747
+            Color.rgb(255, 255, 255),
             Color.rgb(244, 244, 244)
-    }; // #9A12B3
+    };
 
 
     @Override
