@@ -13,6 +13,7 @@
       android:layout_height="wrap_content">
 
       <EditText
+          android:id="@+id/listExpenses"
           android:layout_width="fill_parent"
           android:layout_height="wrap_content"
           android:hint="รายการ"/>
@@ -25,7 +26,7 @@
         android:layout_height="wrap_content">
 
         <EditText
-
+            android:id="@+id/expenses"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:hint="จำนวน"/>
