@@ -1,23 +1,27 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/linear_layout"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff">
+    android:background="#f2f2f2"
+    tools:context="${relativePackage}.${activityClass}">
 
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
 
-    <ListView
-        android:id="@+id/listViewActivity"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="10"></ListView>
+        <android.support.v4.view.PagerTitleStrip
+            android:id="@+id/pager_title_strip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_vertical_margin"
+            android:layout_gravity="top"
+            android:background="#f6f6f6"
+            android:paddingBottom="4dp"
+            android:paddingTop="8dp"
+            android:textColor="#000"
+            />
 
-    <ImageView
-        android:id="@+id/addition"
-        android:layout_weight="1"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="@dimen/activity_vertical_margin"
-        android:src="@drawable/addition"/>
-
-</LinearLayout><!-- From: file:/D:/Project/plan-me/app/src/main/res/layout/activity_main.xml -->
+    </android.support.v4.view.ViewPager>
+</RelativeLayout><!-- From: file:/D:/Project/plan-me/app/src/main/res/layout/activity_main.xml -->

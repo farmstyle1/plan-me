@@ -13,7 +13,14 @@
         android:id="@+id/txtActivity"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_weight="7"
+        android:layout_weight="5"
+        android:padding="@dimen/activity_horizontal_margin" />
+    <TextView
+        android:id="@+id/txtPrice"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="3"
+        android:gravity="right"
         android:padding="@dimen/activity_horizontal_margin" />
 
 

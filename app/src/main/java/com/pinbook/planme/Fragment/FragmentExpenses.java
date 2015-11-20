@@ -26,10 +26,10 @@ public class FragmentExpenses extends Fragment {
 
     private MyDBHelper dbHelper;
     private RadioGroup radioGroup;
-    private RadioButton radioButton;
     private Button btnCancel, btnOK;
     private EditText listExpenses, expenses;
     private String date, txtListExpenses, txtExpenses;
+    private int priceTag;
 
 
     @Override
@@ -39,9 +39,10 @@ public class FragmentExpenses extends Fragment {
         listExpenses = (EditText)rootView.findViewById(R.id.listExpenses);
         expenses = (EditText)rootView.findViewById(R.id.expenses);
 
-        Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-        date = dateFormat.format(calendar.getTime());
+        Bundle bundle = this.getArguments();
+        date = bundle.getString("date");
+
+
 
         btnCancel = (Button) rootView.findViewById(R.id.btnCancel);
         btnCancel.setOnClickListener(new View.OnClickListener() {
@@ -57,18 +58,21 @@ public class FragmentExpenses extends Fragment {
             public void onClick(View v) {
 
                 txtListExpenses = listExpenses.getText().toString();
-                txtExpenses =expenses.getText().toString();
+                txtExpenses = expenses.getText().toString();
 
                 if(txtListExpenses.matches("") || txtExpenses.matches("")) {
 
                 }else{
+                    priceTag =Integer.parseInt(txtExpenses);
                     radioGroup = (RadioGroup)rootView.findViewById(R.id.radioGroup);
                     int radioButtonID = radioGroup.getCheckedRadioButtonId();
                     View radioButton = radioGroup.findViewById(radioButtonID);
                     int position = radioGroup.indexOfChild(radioButton);
-
+                    if(position==0){
+                        priceTag*=-1;
+                    }
                     dbHelper = new MyDBHelper(getContext());
-                    dbHelper.addExpenses(txtListExpenses, Integer.parseInt(txtExpenses),date,String.valueOf(position));
+                    dbHelper.addExpenses(txtListExpenses, priceTag, date, String.valueOf(position));
                     getActivity().finish();
                 }
 

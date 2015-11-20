@@ -17,8 +17,9 @@ import java.util.ArrayList;
  * Created by Miki on 11/15/2015.
  */
 public class ListActivityAdapter extends BaseAdapter {
-    Context context;
-    ArrayList<ListActivityModel> listActivityModel;
+    private Context context;
+    private ArrayList<ListActivityModel> listActivityModel;
+    private int[] statusImg = new int[]{R.drawable.minus, R.drawable.plus};
 
 
     public ListActivityAdapter(Context context, ArrayList<ListActivityModel> listActivityModel) {
@@ -43,7 +44,8 @@ public class ListActivityAdapter extends BaseAdapter {
 
     private class ViewHolder{
         ImageView imageStatus;
-        TextView txtActivity;
+        TextView txtActivity,txtPrice;
+
 
 
     }
@@ -59,7 +61,7 @@ public class ListActivityAdapter extends BaseAdapter {
 
             holder.imageStatus = (ImageView)convertView.findViewById(R.id.imageStatus);
             holder.txtActivity = (TextView)convertView.findViewById(R.id.txtActivity);
-
+            holder.txtPrice = (TextView)convertView.findViewById(R.id.txtPrice);
             convertView.setTag(holder);
 
 
@@ -67,10 +69,22 @@ public class ListActivityAdapter extends BaseAdapter {
         }else{
             holder = (ViewHolder)convertView.getTag();
         }
+
         ListActivityModel b = listActivityModel.get(position);
         holder.txtActivity.setText(b.getActivity());
+        int abs = b.getPrice();
+        if (abs<0){
+            abs*=-1;
+        }
+        holder.txtPrice.setText(abs+" THB");
+        holder.imageStatus.setImageResource(statusImg[Integer.parseInt(b.getStatus())]);
 
 
         return convertView;
+    }
+
+    public void swapItems(ArrayList<ListActivityModel> items) {
+        this.listActivityModel = items;
+        notifyDataSetChanged();
     }
 }

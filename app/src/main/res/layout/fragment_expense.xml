@@ -70,7 +70,7 @@
             android:id="@+id/btnOK"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="70dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/button_ok"
             android:text="OK"
             android:textColor="@color/white"/>
@@ -82,7 +82,7 @@
             android:id="@+id/btnCancel"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="70dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/button_cancel"
             android:text="Cancel"
             android:textColor="@color/holoColor"/>

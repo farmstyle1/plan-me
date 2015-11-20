@@ -16,13 +16,14 @@ import com.pinbook.planme.Fragment.FragmentWorks;
 
 public class AddWorkActivity extends FragmentActivity {
 
-    ViewPager viewPager;
-    Button btnExpenses;
-    Button btnWorks;
-    final int[] colors = {
+
+    private Button btnExpenses;
+    private Button btnWorks;
+    private final int[] colors = {
             Color.rgb(255, 255, 255),
             Color.rgb(244, 244, 244)
     };
+    private String date;
 
 
     @Override
@@ -30,6 +31,8 @@ public class AddWorkActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_work);
 
+        Bundle bundle = getIntent().getExtras();
+        date = bundle.getString("date");
         firstRun();
 
         btnExpenses.setOnClickListener(new View.OnClickListener() {
@@ -41,6 +44,9 @@ public class AddWorkActivity extends FragmentActivity {
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.layoutFragment, fragmentExpenses);
                 transaction.commit();
+                Bundle bundle = new Bundle();
+                bundle.putString("date",date);
+                fragmentExpenses.setArguments(bundle);
 
 
             }
@@ -71,6 +77,11 @@ public class AddWorkActivity extends FragmentActivity {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.layoutFragment, fragmentExpenses);
         transaction.commit();
+        Bundle bundle = new Bundle();
+        bundle.putString("date", date);
+        fragmentExpenses.setArguments(bundle);
+
+
 
     }
 

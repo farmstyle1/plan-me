@@ -50,6 +50,11 @@
     <color name="dim_foreground_material_light">#ff323232</color>
     <color name="foreground_material_dark">@android:color/white</color>
     <color name="foreground_material_light">@android:color/black</color>
+    <!-- From: file:/D:/Project/plan-me/app/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <color name="gray">#f6f6f6</color>
+    <!-- From: file:/D:/Project/plan-me/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
+    <eat-comment/>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
     <color name="hint_foreground_material_dark">@color/bright_foreground_disabled_material_dark</color>
