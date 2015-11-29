@@ -50,11 +50,11 @@ public class DayAdapter extends FragmentStatePagerAdapter{
     }
 
 
-
-    @Override
-    public CharSequence getPageTitle(int position) {
-        return (position + 1)+"";
-    }
+    // Tab Fragment
+    //@Override
+    //public CharSequence getPageTitle(int position) {
+    //    return (position + 1)+"";
+    //}
 
 
 

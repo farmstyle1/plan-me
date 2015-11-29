@@ -27,8 +27,9 @@ public class FragmentDay extends Fragment {
     private String date;
     private ArrayList<ListActivityModel> listActivityModel;
     private ListView listViewActivity;
-    private AutoResizeTextView txtTotal;
+    private AutoResizeTextView txtTotal, txtBalance;
     private ListActivityAdapter listActivityAdapter;
+    private int balance;
 
 
     @Override
@@ -37,12 +38,16 @@ public class FragmentDay extends Fragment {
         Bundle bundle = getArguments();
         position = bundle.getInt(DayAdapter.ARGS_POSITION);
         date = (position + "-11-2015");
+
         dbHelper = new MyDBHelper(getContext());
         listActivityModel = dbHelper.queryActivity(date);
+
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_day, container, false);
         listActivityAdapter = new ListActivityAdapter(getContext(), listActivityModel);
         listViewActivity = (ListView) rootView.findViewById(R.id.listViewActivity);
         listViewActivity.setAdapter(listActivityAdapter);
+
+        txtBalance = (AutoResizeTextView)rootView.findViewById(R.id.balance);
         txtTotal = (AutoResizeTextView) rootView.findViewById(R.id.total);
         ImageView addition = (ImageView) rootView.findViewById(R.id.addition);
         addition.setOnClickListener(new View.OnClickListener() {
@@ -66,8 +71,15 @@ public class FragmentDay extends Fragment {
         int total = 0;
         for (i = 0; i < listActivityModel.size(); i++) {
             ListActivityModel b = listActivityModel.get(i);
-            total += b.getPrice();
+            if(b.getPrice() < 0 ){
+                total += b.getPrice();
+            }
         }
+        if(total < 0){
+            total*=-1;
+        }
+        balance = dbHelper.queryTotal();
+        txtBalance.setText("Balance        "+ String.valueOf(balance) + " THB");
         txtTotal.setText(String.valueOf(total) + " THB");
     }
 }

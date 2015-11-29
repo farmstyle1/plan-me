@@ -29,6 +29,11 @@ public class MyDBHelper extends SQLiteOpenHelper {
     public static final String ACTIVITY_STATUS = "status";
 
 
+    // Account Table
+    public static final String TABLE_ACCOUNT = "account";
+    public static final String ACCOUNT_TOTAL = "total";
+
+
 
 
 
@@ -43,7 +48,8 @@ public class MyDBHelper extends SQLiteOpenHelper {
 
         db.execSQL("CREATE TABLE " + TABLE_ACTIVITY + "( " + ACTIVITY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 ACTIVITY_ACTIVITY + " TEXT," + ACTIVITY_PRICE + " INTEGER," + ACTIVITY_DATE + " TEXT," + ACTIVITY_STATUS + " TEXT);");
-
+        db.execSQL("CREATE TABLE " + TABLE_ACCOUNT + "( " + ACCOUNT_TOTAL + " INTEGER);");
+        db.execSQL("INSERT INTO " + TABLE_ACCOUNT + " (" + ACCOUNT_TOTAL + ") VALUES (0);");
 
     }
 
@@ -69,6 +75,31 @@ public class MyDBHelper extends SQLiteOpenHelper {
 
 
     }
+
+    public Integer queryTotal(){
+        int total = 0;
+        openDB();
+        String strSQL = "SELECT * FROM "+ TABLE_ACCOUNT;
+        Cursor cursor = db.rawQuery(strSQL,null);
+        if (cursor.moveToFirst()){
+            total = cursor.getInt(0);
+        }
+        cursor.close();
+        db.close();
+        return total;
+    }
+
+    public void updateTotal(int total){
+        openDB();
+        ContentValues values = new ContentValues();
+        values.put(ACCOUNT_TOTAL,total);
+        db.update(TABLE_ACCOUNT, values, null, null);
+        db.close();
+
+
+
+    }
+
     public ArrayList<ListActivityModel> queryActivity(String date){
 
         ArrayList<ListActivityModel> activity = new ArrayList<ListActivityModel>();

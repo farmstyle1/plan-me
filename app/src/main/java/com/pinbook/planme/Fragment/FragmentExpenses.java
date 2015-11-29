@@ -29,7 +29,7 @@ public class FragmentExpenses extends Fragment {
     private Button btnCancel, btnOK;
     private EditText listExpenses, expenses;
     private String date, txtListExpenses, txtExpenses;
-    private int priceTag;
+    private int priceTag, total = 0;
 
 
     @Override
@@ -71,7 +71,11 @@ public class FragmentExpenses extends Fragment {
                     if(position==0){
                         priceTag*=-1;
                     }
+
                     dbHelper = new MyDBHelper(getContext());
+                    total = dbHelper.queryTotal();
+                    total+=priceTag;
+                    dbHelper.updateTotal(total);
                     dbHelper.addExpenses(txtListExpenses, priceTag, date, String.valueOf(position));
                     getActivity().finish();
                 }

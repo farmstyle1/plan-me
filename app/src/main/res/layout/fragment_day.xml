@@ -5,6 +5,30 @@
     android:layout_height="match_parent"
     android:background="#fff">
 
+    <LinearLayout
+        android:id="@+id/topLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:background="@color/holoColor"
+        android:orientation="vertical">
+
+        <com.pinbook.planme.AutoResizeTextView
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:text="29 December 2015"
+            android:gravity="center"
+
+            android:textColor="@color/white"
+            android:textSize="24sp"
+
+            />
+
+
+    </LinearLayout>
+
+
 
     <ListView
         android:id="@+id/listViewActivity"
@@ -12,6 +36,25 @@
         android:layout_height="0dp"
         android:layout_weight="20"
         android:layout_below="@+id/lisViewHead"></ListView>
+    <LinearLayout
+        android:id="@+id/totalLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="50sp"
+        android:layout_weight="1"
+        android:background="@color/colorAccent">
+
+        <com.pinbook.planme.AutoResizeTextView
+            android:id="@+id/total"
+            android:gravity="right"
+            android:layout_gravity="center"
+            android:padding="@dimen/activity_vertical_margin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Total"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/bottomLayout"
@@ -28,13 +71,14 @@
             android:layout_height="50dp"
             android:src="@drawable/addition"/>
         <com.pinbook.planme.AutoResizeTextView
-            android:id="@+id/total"
+            android:id="@+id/balance"
             android:gravity="right"
             android:layout_gravity="center"
             android:padding="@dimen/activity_vertical_margin"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"
+            android:text="Balance"
             android:textColor="@color/black"/>
     </LinearLayout>
 

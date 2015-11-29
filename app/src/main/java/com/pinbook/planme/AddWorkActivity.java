@@ -3,14 +3,12 @@ package com.pinbook.planme;
 import android.graphics.Color;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import com.pinbook.planme.Adapter.AddWorkAdapter;
+
 import com.pinbook.planme.Fragment.FragmentExpenses;
 import com.pinbook.planme.Fragment.FragmentWorks;
 
