@@ -14,6 +14,7 @@
         android:orientation="vertical">
 
         <com.pinbook.planme.AutoResizeTextView
+            android:id="@+id/date"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_weight="2"

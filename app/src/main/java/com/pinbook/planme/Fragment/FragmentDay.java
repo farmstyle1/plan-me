@@ -24,20 +24,23 @@ import java.util.ArrayList;
 
 public class FragmentDay extends Fragment {
     private MyDBHelper dbHelper;
-    private String date;
+    private String date, monthName;
     private ArrayList<ListActivityModel> listActivityModel;
     private ListView listViewActivity;
-    private AutoResizeTextView txtTotal, txtBalance;
+    private AutoResizeTextView txtTotal, txtBalance, txtDate;
     private ListActivityAdapter listActivityAdapter;
-    private int balance;
+    private int balance, day, month, year;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         int position = 0;
         Bundle bundle = getArguments();
-        position = bundle.getInt(DayAdapter.ARGS_POSITION);
-        date = (position + "-11-2015");
+        day = bundle.getInt(DayAdapter.ARGS_POSITION);
+        monthName = bundle.getString(DayAdapter.ARGS_MONTH);
+
+
+        date = (day + "-11-2015");
 
         dbHelper = new MyDBHelper(getContext());
         listActivityModel = dbHelper.queryActivity(date);
@@ -49,6 +52,9 @@ public class FragmentDay extends Fragment {
 
         txtBalance = (AutoResizeTextView)rootView.findViewById(R.id.balance);
         txtTotal = (AutoResizeTextView) rootView.findViewById(R.id.total);
+        txtDate = (AutoResizeTextView) rootView.findViewById(R.id.date);
+        txtDate.setText(day+"  "+monthName);
+
         ImageView addition = (ImageView) rootView.findViewById(R.id.addition);
         addition.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -16,16 +16,18 @@ import com.pinbook.planme.Adapter.ListActivityAdapter;
 import com.pinbook.planme.DB.MyDBHelper;
 import com.pinbook.planme.Model.ListActivityModel;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 
 
 public class MainActivity extends FragmentActivity {
     private MyDBHelper dbHelper;
-    public int currentPage,dayOfMonth,monthMaxDays,thisMonth;
-    private String date;
+    public int currentPage,dayOfMonth,monthMaxDays;
+    private String date, monthName, monthNum;
     private ArrayList<ListActivityModel> listActivityModel;
     private ListView listViewActivity;
 
@@ -41,14 +43,17 @@ public class MainActivity extends FragmentActivity {
         dbHelper.openDB();
         // Get Day of Month & How many Day
         Calendar c = Calendar.getInstance();
-        int monthMaxDays = c.getActualMaximum(Calendar.DAY_OF_MONTH);
-        int dayOfMonth = c.get(Calendar.DAY_OF_MONTH);
-        String month = String.format(Locale.ENGLISH,"%tB",c);
+        monthMaxDays = c.getActualMaximum(Calendar.DAY_OF_MONTH);
+        dayOfMonth = c.get(Calendar.DAY_OF_MONTH);
+
+
+
+        monthName = String.format(Locale.ENGLISH,"%tB",c);
         //Log.i("Check",month);
 
 
         ViewPager viewPager = (ViewPager)findViewById(R.id.pager);
-        DayAdapter adapter = new DayAdapter(getSupportFragmentManager(),monthMaxDays,dayOfMonth,month);
+        DayAdapter adapter = new DayAdapter(getSupportFragmentManager(),monthMaxDays,dayOfMonth,monthName);
         viewPager.setAdapter(adapter);
         viewPager.setCurrentItem(dayOfMonth - 1);
 
