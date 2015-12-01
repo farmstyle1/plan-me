@@ -24,8 +24,8 @@ import java.util.Locale;
 
 public class MainActivity extends FragmentActivity {
     private MyDBHelper dbHelper;
-    public int currentPage,dayOfMonth,monthMaxDays,thisMonth;
-    private String date;
+    public int dayOfMonth,monthMaxDays,monthNum;
+    private String  monthName;
     private ArrayList<ListActivityModel> listActivityModel;
     private ListView listViewActivity;
 
@@ -41,14 +41,16 @@ public class MainActivity extends FragmentActivity {
         dbHelper.openDB();
         // Get Day of Month & How many Day
         Calendar c = Calendar.getInstance();
-        int monthMaxDays = c.getActualMaximum(Calendar.DAY_OF_MONTH);
-        int dayOfMonth = c.get(Calendar.DAY_OF_MONTH);
-        String month = String.format(Locale.ENGLISH,"%tB",c);
-        //Log.i("Check",month);
+        monthMaxDays = c.getActualMaximum(Calendar.DAY_OF_MONTH);
+        dayOfMonth = c.get(Calendar.DAY_OF_MONTH);
+        monthName = String.format(Locale.ENGLISH,"%tB",c);
+        monthNum = c.get(Calendar.MONTH);
+
+
 
 
         ViewPager viewPager = (ViewPager)findViewById(R.id.pager);
-        DayAdapter adapter = new DayAdapter(getSupportFragmentManager(),monthMaxDays,dayOfMonth,month);
+        DayAdapter adapter = new DayAdapter(getSupportFragmentManager(),monthMaxDays,dayOfMonth,monthName);
         viewPager.setAdapter(adapter);
         viewPager.setCurrentItem(dayOfMonth - 1);
 

@@ -9,8 +9,7 @@
         android:id="@+id/topLayout"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="6"
-        android:background="@color/holoColor"
+        android:layout_weight="4"
         android:orientation="vertical">
 
         <com.pinbook.planme.AutoResizeTextView
@@ -19,14 +18,19 @@
             android:layout_weight="2"
             android:text="29 December 2015"
             android:gravity="center"
-
-            android:textColor="@color/white"
             android:textSize="24sp"
 
             />
 
-
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="#ffffff"/>
     </LinearLayout>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="@color/red"/>
 
 
 
@@ -41,7 +45,7 @@
         android:layout_width="fill_parent"
         android:layout_height="50sp"
         android:layout_weight="1"
-        android:background="@color/colorAccent">
+        android:background="@color/red">
 
         <com.pinbook.planme.AutoResizeTextView
             android:id="@+id/total"
@@ -82,5 +86,8 @@
             android:textColor="@color/black"/>
     </LinearLayout>
 
-
-</LinearLayout><!-- From: file:/D:/Project/PlanMe/app/src/main/res/layout/fragment_day.xml -->
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="#ffffff"/>
+</LinearLayout><!-- From: file:/D:/Project/plan-me/app/src/main/res/layout/fragment_day.xml -->
