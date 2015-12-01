@@ -17,6 +17,7 @@ application
 ADDED from D:\Project\plan-me\app\src\main\AndroidManifest.xml:5:5-22:19
 MERGED from [com.android.support:appcompat-v7:23.1.0] D:\Project\plan-me\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.0\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.1.0] D:\Project\plan-me\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.1.0] D:\Project\plan-me\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\AndroidManifest.xml:22:5-20
 	android:label
 		ADDED from D:\Project\plan-me\app\src\main\AndroidManifest.xml:8:9-41
 	android:supportsRtl
@@ -50,6 +51,7 @@ ADDED from D:\Project\plan-me\app\src\main\AndroidManifest.xml:18:9-21:20
 uses-sdk
 INJECTED from D:\Project\plan-me\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:23.1.0] D:\Project\plan-me\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.1.0] D:\Project\plan-me\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-v4:23.1.0] D:\Project\plan-me\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\AndroidManifest.xml:20:5-43
 	android:targetSdkVersion
 		INJECTED from D:\Project\plan-me\app\src\main\AndroidManifest.xml

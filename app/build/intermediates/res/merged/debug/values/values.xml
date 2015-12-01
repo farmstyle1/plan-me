@@ -86,7 +86,7 @@
     <color name="primary_text_disabled_material_light">#39000000</color>
     <!-- From: file:/D:/Project/plan-me/app/src/main/res/values/colors.xml -->
     <eat-comment/>
-    <color name="red">#F44336</color>
+    <color name="red">#D32F2F</color>
     <!-- From: file:/D:/Project/plan-me/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
     <eat-comment/>
     <color name="ripple_material_dark">#33ffffff</color>
