@@ -1,37 +1,36 @@
 package com.pinbook.planme.Fragment;
 
-import android.app.Activity;
-import android.app.DatePickerDialog;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.DatePicker;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.pinbook.planme.Adapter.DayAdapter;
 import com.pinbook.planme.Adapter.ListActivityAdapter;
 import com.pinbook.planme.AddWorkActivity;
 import com.pinbook.planme.AutoResizeTextView;
-import com.pinbook.planme.CallBack;
 import com.pinbook.planme.DB.MyDBHelper;
+import com.pinbook.planme.Dialog.DialogFragmentDeleteActivity;
 import com.pinbook.planme.Model.ListActivityModel;
 import com.pinbook.planme.R;
 
 import java.util.ArrayList;
-import java.util.Calendar;
-
-import javax.security.auth.callback.Callback;
 
 
-public class FragmentDay extends Fragment implements CallBack  {
+public class FragmentDay extends DialogFragment  {
     private MyDBHelper dbHelper;
     private String date, monthName;
     private ArrayList<ListActivityModel> listActivityModel;
@@ -62,12 +61,23 @@ public class FragmentDay extends Fragment implements CallBack  {
         listActivityAdapter = new ListActivityAdapter(getContext(), listActivityModel);
         listViewActivity = (ListView) rootView.findViewById(R.id.listViewActivity);
         listViewActivity.setAdapter(listActivityAdapter);
-
+        listViewActivity.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                ListActivityModel ls =  listActivityModel.get(position);
+                FragmentManager fm =getFragmentManager();
+                DialogFragmentDeleteActivity deleteDialog = new DialogFragmentDeleteActivity();
+                deleteDialog.show(fm,"Dialog_delete");
+               // new DialogFragmentDeleteActivity().show(getFragmentManager(), "DialogFragmentDeleteActivity");
+                Log.i("check",ls.getActivity());
+                return true;
+            }
+        });
 
         txtBalance = (AutoResizeTextView)rootView.findViewById(R.id.balance);
         txtTotal = (AutoResizeTextView) rootView.findViewById(R.id.total);
         txtDate = (AutoResizeTextView) rootView.findViewById(R.id.date);
-        txtDate.setText(day+"  "+monthName);
+        txtDate.setText(day + "  " + monthName + " " + year);
 
         addition = (ImageView) rootView.findViewById(R.id.addition);
         addition.setOnClickListener(new View.OnClickListener() {
@@ -79,25 +89,30 @@ public class FragmentDay extends Fragment implements CallBack  {
             }
         });
 
-        monthPicker = (ImageView)rootView.findViewById(R.id.monthPicker);
-        monthPicker.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DialogFragment picker = new DatePickerFragment();
-                picker.show(getFragmentManager(), "datePicker");
-
-
-            }
-        });
-
-
         return rootView;
     }
 
+    @NonNull
     @Override
-    public void setDate(String date) {
-
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
+        return new AlertDialog.Builder(getActivity())
+                .setTitle("DELETE")
+                .setMessage(R.string.Delete)
+                .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Log.i("check", "Cancel");
+                    }
+                })
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Log.i("check", "OK");
+                    }
+                })
+                .create();
     }
+
 
     @Override
     public void onResume() {

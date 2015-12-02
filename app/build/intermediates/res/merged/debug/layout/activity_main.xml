@@ -2,11 +2,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f2f2f2"
+    android:background="@color/red"
     tools:context="${relativePackage}.${activityClass}">
+
+
+    <ImageView
+        android:layout_gravity="right"
+        android:id="@+id/monthPicker"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/calendar"
+        android:layout_alignParentRight="true"/>
+
 
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"
+
+        android:layout_below="@+id/monthPicker"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
@@ -25,4 +38,5 @@
             />  -->
 
     </android.support.v4.view.ViewPager>
+
 </RelativeLayout><!-- From: file:/D:/Project/plan-me/app/src/main/res/layout/activity_main.xml -->

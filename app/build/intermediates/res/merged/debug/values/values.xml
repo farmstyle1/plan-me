@@ -86,7 +86,8 @@
     <color name="primary_text_disabled_material_light">#39000000</color>
     <!-- From: file:/D:/Project/plan-me/app/src/main/res/values/colors.xml -->
     <eat-comment/>
-    <color name="red">#D32F2F</color>
+    <color name="red">#F44336</color>
+    <color name="red2">#D32F2F</color>
     <!-- From: file:/D:/Project/plan-me/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
     <eat-comment/>
     <color name="ripple_material_dark">#33ffffff</color>
@@ -228,6 +229,11 @@
     <integer name="abc_max_action_buttons">2</integer>
     <integer name="cancel_button_image_alpha">127</integer>
     <integer name="status_bar_notification_info_maxnum">999</integer>
+    <!-- From: file:/D:/Project/plan-me/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="Delete">คุณต้องการลบ?</string>
+    <!-- From: file:/D:/Project/plan-me/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
+    <eat-comment/>
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
     <string name="abc_action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
