@@ -64,12 +64,28 @@ public class FragmentDay extends DialogFragment  {
         listViewActivity.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                ListActivityModel ls =  listActivityModel.get(position);
-                FragmentManager fm =getFragmentManager();
-                DialogFragmentDeleteActivity deleteDialog = new DialogFragmentDeleteActivity();
-                deleteDialog.show(fm,"Dialog_delete");
-               // new DialogFragmentDeleteActivity().show(getFragmentManager(), "DialogFragmentDeleteActivity");
-                Log.i("check",ls.getActivity());
+                final ListActivityModel ls = listActivityModel.get(position);
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+
+                builder.setTitle("DELETE");
+                builder.setMessage(getResources().getString(R.string.Delete));
+                builder.setNegativeButton(getString(android.R.string.cancel), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                builder.setPositiveButton(getString(android.R.string.ok), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Log.i("check", ls.getActivity());
+                    }
+                });
+
+                builder.show();
+
+
                 return true;
             }
         });
@@ -92,26 +108,7 @@ public class FragmentDay extends DialogFragment  {
         return rootView;
     }
 
-    @NonNull
-    @Override
-    public Dialog onCreateDialog(Bundle savedInstanceState) {
-        return new AlertDialog.Builder(getActivity())
-                .setTitle("DELETE")
-                .setMessage(R.string.Delete)
-                .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Log.i("check", "Cancel");
-                    }
-                })
-                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Log.i("check", "OK");
-                    }
-                })
-                .create();
-    }
+
 
 
     @Override
