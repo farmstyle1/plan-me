@@ -5,6 +5,7 @@ import android.app.DatePickerDialog.OnDateSetListener;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.ImageView;
@@ -37,8 +38,9 @@ public class MainActivity extends FragmentActivity {
             year = years;
             dayOfMonth = day;
             monthName = monthArr[monthNum];
-
-
+            Calendar c = Calendar.getInstance();
+            c.set(year,monthNum,dayOfMonth);
+            monthMaxDays = c.getActualMaximum(Calendar.DAY_OF_MONTH);
             adapter = new DayAdapter(getSupportFragmentManager(), monthMaxDays, dayOfMonth, monthName, year, month);
             viewPager.setAdapter(adapter);
             viewPager.setCurrentItem(dayOfMonth - 1);

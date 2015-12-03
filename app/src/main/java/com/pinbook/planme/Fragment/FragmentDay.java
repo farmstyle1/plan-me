@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -36,9 +37,10 @@ public class FragmentDay extends DialogFragment  {
     private ArrayList<ListActivityModel> listActivityModel;
     private ListView listViewActivity;
     private ImageView addition, monthPicker;
-    private AutoResizeTextView txtTotal, txtBalance, txtDate;
+    private AutoResizeTextView txtTotal, txtBalance,txtDate;
     private ListActivityAdapter listActivityAdapter;
     private int balance, day, monthNum, year;
+
 
 
 
@@ -79,7 +81,12 @@ public class FragmentDay extends DialogFragment  {
                 builder.setPositiveButton(getString(android.R.string.ok), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Log.i("check", ls.getActivity());
+                        dbHelper.deleteActivity(ls.getId());
+                        int total = dbHelper.queryTotal();
+                        total-=ls.getPrice();
+                        dbHelper.updateTotal(total);
+                        onResume();
+
                     }
                 });
 
@@ -90,9 +97,9 @@ public class FragmentDay extends DialogFragment  {
             }
         });
 
-        txtBalance = (AutoResizeTextView)rootView.findViewById(R.id.balance);
-        txtTotal = (AutoResizeTextView) rootView.findViewById(R.id.total);
-        txtDate = (AutoResizeTextView) rootView.findViewById(R.id.date);
+        //txtBalance = (AutoResizeTextView)rootView.findViewById(R.id.balance);
+        txtTotal = (AutoResizeTextView) rootView.findViewById(R.id.date);
+        txtDate = (AutoResizeTextView) rootView.findViewById(R.id.total);
         txtDate.setText(day + "  " + monthName + " " + year);
 
         addition = (ImageView) rootView.findViewById(R.id.addition);
@@ -129,8 +136,8 @@ public class FragmentDay extends DialogFragment  {
             total*=-1;
         }
         balance = dbHelper.queryTotal();
-        txtBalance.setText("Balance        "+ String.valueOf(balance) + " THB");
-        txtTotal.setText(String.valueOf(total) + " THB");
+        //txtBalance.setText("Balance        "+ String.valueOf(balance) + " THB");
+        txtTotal.setText(String.valueOf(total) + "  บาท");
     }
 }
 

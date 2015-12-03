@@ -2,24 +2,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/red"
+    android:background="@color/gray"
     tools:context="${relativePackage}.${activityClass}">
 
+    <FrameLayout
+        android:id="@+id/frameHead"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/oldgreen">
+        <ImageView
+            android:layout_gravity="right"
+            android:id="@+id/monthPicker"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/calendar"
+            android:layout_alignParentRight="true"/>
 
-    <ImageView
-        android:layout_gravity="right"
-        android:id="@+id/monthPicker"
-        android:layout_margin="@dimen/activity_vertical_margin"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:src="@drawable/calendar"
-        android:layout_alignParentRight="true"/>
+    </FrameLayout>
+
 
 
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"
 
-        android:layout_below="@+id/monthPicker"
+        android:layout_below="@+id/frameHead"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >

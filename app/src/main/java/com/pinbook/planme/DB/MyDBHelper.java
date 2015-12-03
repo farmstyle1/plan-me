@@ -109,7 +109,7 @@ public class MyDBHelper extends SQLiteOpenHelper {
         if (cursor != null) {
             if (cursor.moveToFirst()) {
                 do {
-                    ListActivityModel lam = new ListActivityModel(cursor.getString(1), cursor.getInt(2),cursor.getString(3),cursor.getString(4));
+                    ListActivityModel lam = new ListActivityModel(cursor.getInt(0),cursor.getString(1), cursor.getInt(2),cursor.getString(3),cursor.getString(4));
 
 
                     activity.add(lam);
@@ -119,6 +119,13 @@ public class MyDBHelper extends SQLiteOpenHelper {
         cursor.close();
         db.close();
         return activity;
+    }
+
+    public void deleteActivity(int id) {
+        openDB();
+        db.delete(TABLE_ACTIVITY, "id =" + id, null);
+        db.close();
+
     }
 
 

@@ -63,6 +63,7 @@ public class FragmentExpenses extends Fragment {
                 if(txtListExpenses.matches("") || txtExpenses.matches("")) {
 
                 }else{
+
                     priceTag =Integer.parseInt(txtExpenses);
                     radioGroup = (RadioGroup)rootView.findViewById(R.id.radioGroup);
                     int radioButtonID = radioGroup.getCheckedRadioButtonId();
@@ -71,7 +72,6 @@ public class FragmentExpenses extends Fragment {
                     if(position==0){
                         priceTag*=-1;
                     }
-
                     dbHelper = new MyDBHelper(getContext());
                     total = dbHelper.queryTotal();
                     total+=priceTag;

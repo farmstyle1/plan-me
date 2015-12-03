@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
-<ImageView
-    android:id="@+id/imageStatus"
-    android:layout_width="0dp"
-    android:layout_height="50dp"
-    android:layout_weight="1"
-    android:paddingBottom="10dp"
-    android:paddingTop="10dp"
-    android:src="@drawable/plus"/>
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageStatus"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:src="@drawable/plus" />
+
     <TextView
         android:id="@+id/txtActivity"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_weight="5"
         android:padding="@dimen/activity_horizontal_margin" />
+
     <TextView
         android:id="@+id/txtPrice"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_weight="3"
         android:gravity="right"
         android:padding="@dimen/activity_horizontal_margin" />

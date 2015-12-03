@@ -29,6 +29,7 @@
             android:id="@+id/expenses"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:inputType="number"
             android:hint="จำนวน"/>
 
     </LinearLayout>
@@ -85,7 +86,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/button_cancel"
             android:text="Cancel"
-            android:textColor="@color/holoColor"/>
+            android:textColor="@color/oldgreen"/>
     </LinearLayout>
 
 </RelativeLayout>
