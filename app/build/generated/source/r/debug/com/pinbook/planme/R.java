@@ -1653,7 +1653,7 @@ containing a value of this type.
         public static final int cover=0x7f0c005b;
         public static final int custom=0x7f0c0037;
         public static final int customPanel=0x7f0c0036;
-        public static final int date=0x7f0c005d;
+        public static final int date=0x7f0c0061;
         public static final int decor_content_parent=0x7f0c003f;
         public static final int default_activity_button=0x7f0c0027;
         public static final int disableHome=0x7f0c000c;
@@ -1732,7 +1732,7 @@ containing a value of this type.
         public static final int title_template=0x7f0c002f;
         public static final int topLayout=0x7f0c005c;
         public static final int topPanel=0x7f0c002e;
-        public static final int total=0x7f0c0061;
+        public static final int total=0x7f0c005d;
         public static final int txtActivity=0x7f0c0058;
         public static final int txtPrice=0x7f0c0059;
         public static final int up=0x7f0c0008;

@@ -26,6 +26,7 @@ import com.pinbook.planme.AutoResizeTextView;
 import com.pinbook.planme.DB.MyDBHelper;
 import com.pinbook.planme.Dialog.DialogFragmentDeleteActivity;
 import com.pinbook.planme.Model.ListActivityModel;
+import com.pinbook.planme.MyTextView;
 import com.pinbook.planme.R;
 
 import java.util.ArrayList;
@@ -37,9 +38,9 @@ public class FragmentDay extends DialogFragment  {
     private ArrayList<ListActivityModel> listActivityModel;
     private ListView listViewActivity;
     private ImageView addition, monthPicker;
-    private AutoResizeTextView txtTotal, txtBalance,txtDate;
     private ListActivityAdapter listActivityAdapter;
     private int balance, day, monthNum, year;
+    private MyTextView txtTotal, txtDate;
 
 
 
@@ -98,8 +99,9 @@ public class FragmentDay extends DialogFragment  {
         });
 
         //txtBalance = (AutoResizeTextView)rootView.findViewById(R.id.balance);
-        txtTotal = (AutoResizeTextView) rootView.findViewById(R.id.date);
-        txtDate = (AutoResizeTextView) rootView.findViewById(R.id.total);
+        txtTotal = (MyTextView) rootView.findViewById(R.id.total);
+        txtDate = (MyTextView) rootView.findViewById(R.id.date);
+
         txtDate.setText(day + "  " + monthName + " " + year);
 
         addition = (ImageView) rootView.findViewById(R.id.addition);
@@ -137,7 +139,7 @@ public class FragmentDay extends DialogFragment  {
         }
         balance = dbHelper.queryTotal();
         //txtBalance.setText("Balance        "+ String.valueOf(balance) + " THB");
-        txtTotal.setText(String.valueOf(total) + "  บาท");
+        txtTotal.setText(String.valueOf(total) + "   THB");
     }
 }
 

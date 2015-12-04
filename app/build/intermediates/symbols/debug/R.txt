@@ -499,7 +499,7 @@ int id contentPanel 0x7f0c0031
 int id cover 0x7f0c005b
 int id custom 0x7f0c0037
 int id customPanel 0x7f0c0036
-int id date 0x7f0c005d
+int id date 0x7f0c0061
 int id decor_content_parent 0x7f0c003f
 int id default_activity_button 0x7f0c0027
 int id disableHome 0x7f0c000c
@@ -578,7 +578,7 @@ int id title 0x7f0c002a
 int id title_template 0x7f0c002f
 int id topLayout 0x7f0c005c
 int id topPanel 0x7f0c002e
-int id total 0x7f0c0061
+int id total 0x7f0c005d
 int id txtActivity 0x7f0c0058
 int id txtPrice 0x7f0c0059
 int id up 0x7f0c0008

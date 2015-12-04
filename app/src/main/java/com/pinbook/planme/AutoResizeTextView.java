@@ -21,6 +21,8 @@ public class AutoResizeTextView extends TextView {
     // Minimum text size for this text view
     public static final float MIN_TEXT_SIZE = 20;
 
+
+
     // Interface for resize notifications
     public interface OnTextResizeListener {
         public void onTextResize(TextView textView, float oldSize, float newSize);

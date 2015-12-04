@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.pinbook.planme.Model.ListActivityModel;
+import com.pinbook.planme.MyTextView;
 import com.pinbook.planme.R;
 
 import java.util.ArrayList;
@@ -44,7 +45,7 @@ public class ListActivityAdapter extends BaseAdapter {
 
     private class ViewHolder{
         ImageView imageStatus;
-        TextView txtActivity,txtPrice;
+        MyTextView txtActivity,txtPrice;
 
 
 
@@ -60,8 +61,8 @@ public class ListActivityAdapter extends BaseAdapter {
             holder = new ViewHolder();
 
             holder.imageStatus = (ImageView)convertView.findViewById(R.id.imageStatus);
-            holder.txtActivity = (TextView)convertView.findViewById(R.id.txtActivity);
-            holder.txtPrice = (TextView)convertView.findViewById(R.id.txtPrice);
+            holder.txtActivity = (MyTextView)convertView.findViewById(R.id.txtActivity);
+            holder.txtPrice = (MyTextView)convertView.findViewById(R.id.txtPrice);
             convertView.setTag(holder);
 
 
@@ -76,7 +77,7 @@ public class ListActivityAdapter extends BaseAdapter {
         if (abs<0){
             abs*=-1;
         }
-        holder.txtPrice.setText(abs+" THB");
+        holder.txtPrice.setText(abs+"  THB");
         holder.imageStatus.setImageResource(statusImg[Integer.parseInt(b.getStatus())]);
 
 

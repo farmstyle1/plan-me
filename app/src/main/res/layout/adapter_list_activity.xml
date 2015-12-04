@@ -12,14 +12,14 @@
         android:paddingTop="10dp"
         android:src="@drawable/plus" />
 
-    <TextView
+    <com.pinbook.planme.MyTextView
         android:id="@+id/txtActivity"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="5"
         android:padding="@dimen/activity_horizontal_margin" />
 
-    <TextView
+    <com.pinbook.planme.MyTextView
         android:id="@+id/txtPrice"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
